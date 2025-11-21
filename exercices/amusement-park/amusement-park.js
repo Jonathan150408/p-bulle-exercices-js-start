@@ -1,4 +1,5 @@
-/// <reference path="./global.d.ts" />
+///
+<reference path="./global.d.ts" />
 // @ts-check
 
 /**
@@ -7,7 +8,7 @@
  * @param {string} name
  * @param {number} age
  * @param {string} ticketId
- * @returns {Visitor} the visitor that was created
+ * @returns {visitor} the visitor that was created
  */
 export function createVisitor(name, age, ticketId) {
   const visitor = {name, age, ticketId};
@@ -33,12 +34,14 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
+  tickets.forEach(element => {
+    if (element == null)
+      return "not sold";
+    else if (element == ticketId)
+      return "sold to " + element.visitor;
+  });
   
-
-  return ?;
-
-  }
-
+  return "unknown ticket id";
 }
 
 /**
