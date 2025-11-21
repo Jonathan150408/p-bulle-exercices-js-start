@@ -1,5 +1,3 @@
-///
-<reference path="./global.d.ts" />
 // @ts-check
 
 /**
@@ -34,27 +32,26 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  tickets.forEach(element => {
-    if (element == null)
-      return "not sold";
-    else if (element == ticketId)
-      return "sold to " + element.visitor;
-  });
-  
-  return "unknown ticket id";
+  if (tickets[ticketId] === undefined)
+    return "unknown ticket id";
+  else if (tickets[ticketId] == null)
+    return "not sold";
+  return "sold to " + tickets[ticketId];
 }
 
 /**
  * Determines the status a ticket has in the ticket tracking object
  * and returns a simplified status message.
- *
+ * 
  * @param {Record<string, string|null>} tickets
  * @param {string} ticketId
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  throw new Error('Remove this line and implement the function');
-}
+  if (tickets[ticketId] === undefined || tickets[ticketId] == null)
+    return "invalid ticket !!!";
+  return tickets[ticketId];
+  }
 
 /**
  * Determines the version of the GTC that was signed by the visitor.
@@ -63,5 +60,5 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  throw new Error('Remove this line and implement the function');
+  return visitor.gtc?.version;
 }
