@@ -5,27 +5,39 @@
 
 export class BankAccount {
   constructor() {
-    throw new Error('Remove this line and implement the function');
+    let total;
   }
 
   open() {
-    throw new Error('Remove this line and implement the function');
+    if (this.total === undefined)
+      this.total = 0;
+    else
+      throw new ValueError;
   }
 
   close() {
-    throw new Error('Remove this line and implement the function');
+    if (this.total === undefined)
+      throw new ValueError;
+    else
+      delete this.total;
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+  deposit(sum) {
+    if (this.total === undefined ||sum <= 0)
+      throw new ValueError;
+    this.total += sum;
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+  withdraw(sum) {
+    if (this.total === undefined || sum <= 0 || this.total < sum)
+      throw new ValueError;
+    this.total -= sum;
   }
 
   get balance() {
-    throw new Error('Remove this line and implement the function');
+    if (this.total === undefined)
+      throw new ValueError;
+    return this.total;
   }
 }
 
