@@ -4,5 +4,14 @@
 //
 
 export const hey = (message) => {
-  throw new Error('Remove this line and implement the function');
+  if (isUpperCase(message) && message.trim()[message.lenght - 1] == "?")
+    return "Calm down, I know what I'm doing!";
+  else if (isUpperCase(message))
+    return "Whoa, chill out!";
+  else if (message.trim()[message.lenght - 1] == "?")
+    return "Sure.";
+  else if (message.trim() == "")
+    return "Fine. Be that way!";
+  else
+    return "Whatever."
 };
