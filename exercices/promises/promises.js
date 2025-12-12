@@ -1,10 +1,7 @@
-//
-// This is only a SKELETON file for the 'Promises' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+//@ts-check
 
 export const promisify = () => {
-  throw new Error('Remove this line and implement the function');
+  return undefined
 };
 
 export const all = () => {
