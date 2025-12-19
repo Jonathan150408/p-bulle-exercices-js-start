@@ -1,8 +1,4 @@
 // @ts-check
-//
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
 
 /**
  * Determines the text to print on a badge
@@ -13,6 +9,6 @@
  *
  * @returns {string} the text to print on the badge
  */
-export function printBadge(id, name, department) {
-  throw new Error('Remove this line and implement the function');
+export function printBadge(id = null, name, department) {
+  return (id ? `[${id}] ` : "") + name + (department ? ` - ${(department)?.toUpperCase()}` : " - OWNER")
 }
