@@ -1,8 +1,26 @@
-//
-// This is only a SKELETON file for the 'RNA Transcription' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+//@ts-check
 
-export const toRna = () => {
-  throw new Error('Remove this line and implement the function');
+/**
+ * @param {[string]} DNA
+ * @returns {string}
+ */
+export const toRna = (DNA) => {
+  let result = ""
+  for (let i = 0; i < DNA.length; i++){
+    switch (DNA[i]){
+    case 'G':
+      result += 'C'
+      break
+    case 'C':
+      result += 'G'
+      break
+    case 'T':
+      result += 'A'
+      break
+    case 'A':
+      result += 'U'
+      break
+    }
+  }
+  return result
 };
