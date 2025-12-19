@@ -22,11 +22,8 @@ export function needsLicense(kind) {
  * @param {string} option2
  * @returns {string} a sentence of advice which option to choose
  */
-export function chooseVehicle(option1, option2) {
-  if (option1 < option2)
-    return option1 + " is clearly the better choice."
-  else
-    return option2 + " is clearly the better choice."
+export const chooseVehicle = (option1, option2) => {
+  return ([option1, option2].sort())[0] + " is clearly the better choice."
 }
 
 /**
