@@ -10,5 +10,5 @@
  * @returns {string} the text to print on the badge
  */
 export function printBadge(id = null, name, department) {
-  return (id ? `[${id}] ` : "") + name + (department ? ` - ${(department)?.toUpperCase()}` : " - OWNER")
+  return (id ? `[${id}] ` : "") + name + (department ? ` - ${department?.toUpperCase()}` : " - OWNER");
 }
