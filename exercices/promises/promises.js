@@ -1,8 +1,8 @@
 //@ts-check
 
-export const promisify = () => {
+export const promisify = new Promise(function(resolve, reject) {
   return undefined
-};
+});
 
 export const all = () => {
   throw new Error('Remove this line and implement the function');
