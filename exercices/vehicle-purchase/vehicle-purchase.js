@@ -23,6 +23,16 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export const chooseVehicle = (option1, option2) => {
+  // explications (j'espère que c'est la bonne fonction)
+  /*
+  1. on crée un tableau avec les 2 options
+  2. on le trie -> ordre alphabétique donc l'item n°1 est forcément avant le 2 dans l'alphabet
+  3. puisqu'on veut l'item qui est le plus "petit" alphabetiquement, on prend le n°1
+  ----
+  pourquoi ça plutôt qu'un if-else ?
+  1. on peut mettre plus d'options
+  2. je trouve plus propre car une seule ligne
+   */
   return ([option1, option2].sort())[0] + " is clearly the better choice."
 }
 
