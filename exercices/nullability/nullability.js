@@ -1,5 +1,5 @@
 // @ts-check
-
+ 
 /**
  * Determines the text to print on a badge
  *
