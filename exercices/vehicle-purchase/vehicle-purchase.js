@@ -18,11 +18,10 @@ export function needsLicense(kind) {
  * Helps choosing between two options by recommending the one that
  * comes first in dictionary order.
  *
- * @param {string} option1
- * @param {string} option2
+ * @param {...string} options the list of all the options
  * @returns {string} a sentence of advice which option to choose
  */
-export const chooseVehicle = (option1, option2) => {
+export const chooseVehicle = (...options) => {
   // explications (j'espère que c'est la bonne fonction)
   /*
   1. on crée un tableau avec les 2 options
@@ -33,7 +32,7 @@ export const chooseVehicle = (option1, option2) => {
   1. on peut mettre plus d'options
   2. je trouve plus propre car une seule ligne
    */
-  return ([option1, option2].sort())[0] + " is clearly the better choice."
+  return ([...options].sort())[0] + " is clearly the better choice."
 }
 
 /**
