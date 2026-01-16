@@ -7,3 +7,8 @@
 - (durabilité) .gitignore: OK
 
 - Globalement: Très bien, bravo, continuez comme ça.
+
+
+## Final
+
+- Voir grille
